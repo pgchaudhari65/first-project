@@ -5,11 +5,10 @@ import { createUserHandler } from "./user.controller"
 
 const router = Router();
 
-//  router.get('/', (req,res) => {
-//     res.send({ message: 'hello Router!!!'})
-//  })
+router.get('/', (req,res) => {
+    res.send({ message: 'hello Router!!!'})
+ })
 
-console.log("In router");
 router.post("/",createUserHandler)
 
 //function router(app: Express) {

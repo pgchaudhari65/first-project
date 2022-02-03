@@ -26,15 +26,11 @@ const router = express_1.default.Router();
 // app.use('/api', router)
 app.use('/', item_router_1.default);
 logger_1.default.info("In index.ts");
-// app.get('/data', (req, res) => {
-//     res.send({ data: [1,2,3] })
-// })
 // app.post('/data', (req,res) => {
 //     console.log(req.body)
 //     res.send({ ok : true})
 // })
 app.listen(3000, () => __awaiter(void 0, void 0, void 0, function* () {
-    //console.log('The application is listening on port 3000!');
     logger_1.default.info('The application is running on port 3000!');
     yield (0, connect_1.default)();
     //Item(app);

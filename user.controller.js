@@ -19,12 +19,7 @@ function createUserHandler(req, res) {
         try {
             console.log(req.body);
             const user = yield user_model_1.default.create(req.body);
-            //return user;
             res.send(user);
-            console.log("in controller2");
-            // const user = UserModel.create(req.body).then((users) => {
-            //     return res.send(users);
-            //   });
         }
         catch (e) {
             return res.send(e.message);
