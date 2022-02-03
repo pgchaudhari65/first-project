@@ -16,13 +16,16 @@ const express_1 = __importDefault(require("express"));
 const item_router_1 = __importDefault(require("./item.router"));
 const connect_1 = __importDefault(require("./connect"));
 const logger_1 = __importDefault(require("./logger"));
+const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
+app.use(body_parser_1.default.json()); //application/json
 const router = express_1.default.Router();
 // router.get('/me', (req,res) => {
 //     res.send({ me: 'hello'})
 // })
 // app.use('/api', router)
 app.use('/', item_router_1.default);
+logger_1.default.info("In index.ts");
 // app.get('/data', (req, res) => {
 //     res.send({ data: [1,2,3] })
 // })
@@ -32,7 +35,7 @@ app.use('/', item_router_1.default);
 // })
 app.listen(3000, () => __awaiter(void 0, void 0, void 0, function* () {
     //console.log('The application is listening on port 3000!');
-    logger_1.default.info('The application is running on port 3000');
+    logger_1.default.info('The application is running on port 3000!');
     yield (0, connect_1.default)();
     //Item(app);
 }));

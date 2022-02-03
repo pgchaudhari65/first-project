@@ -4,12 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
+//create specific schema using Schema constructor
+//how the database look
 const userSchema = new mongoose_1.default.Schema({
-    email: { type: String, required: true, unique: true },
-    name: { type: String, required: true },
-    password: { type: String, required: true },
+    email: { type: String },
+    name: { type: String },
+    password: { type: String }
 }, {
-    timestamps: true,
+    timestamps: true
 });
-const UserModel = mongoose_1.default.model("User", userSchema);
+const UserModel = mongoose_1.default.model("UserSchema", userSchema);
 exports.default = UserModel;

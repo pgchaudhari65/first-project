@@ -3,9 +3,10 @@ import config from './config/default';
 import  Item  from './item.router';
 import connect from './connect';
 import logger from './logger';
+import parser from "body-parser";
 
 const app = express();
-
+app.use(parser.json()); //application/json
 const router = express.Router()
 
 
@@ -15,6 +16,8 @@ const router = express.Router()
 
 // app.use('/api', router)
  app.use('/',Item);
+ logger.info("In index.ts");
+ 
 
 // app.get('/data', (req, res) => {
 //     res.send({ data: [1,2,3] })
@@ -27,7 +30,7 @@ const router = express.Router()
 
 app.listen(3000, async () => {
     //console.log('The application is listening on port 3000!');
-    logger.info('The application is running on port 3000');
+    logger.info('The application is running on port 3000!');
 
     await connect();
 
